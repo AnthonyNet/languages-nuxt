@@ -52,7 +52,7 @@
                 <strong> Deutsch</strong>
               </summary>
               <ul class="flex flex-col navDetails">
-                <NuxtLink to="/german/german">Irregular Verbs ({{VerbenData.length}})</NuxtLink>
+                <NuxtLink to="/german/irregular-verbs">Irregular Verbs ({{VerbenData.length}})</NuxtLink>
                 <NuxtLink to="/german/goethe">Goethe ({{Goethe.length}}) </NuxtLink>
               </ul>
             </details>

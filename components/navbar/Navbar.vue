@@ -7,19 +7,15 @@ import OxfordC1 from '../../myData/OxfordC1.js';
 import VerbenData from '../../myData/VerbenData.js';
 import Goethe from '../../myData/Goethe.js';
 
-const styles = {
-  nav: 'flex justify-center items-center w-full  min-h-[100px] shadow-xl z-[400] px-4',
-  nav__div: 'navDetails w-full h-full flex items-start  relative text-xl ',
-  aside: 'logo sm:w-1/3 ',
-  article: 'justify-around items-start w-full h-full hidden md:flex',
-  nav__ul: 'flex flex-col border-solid border-t-4 border-sky-400 navDetails',
-}
+import MobileNav from './MobileNav.vue';
 
 export default {
   name: 'Navbar',
+  components: {
+    MobileNav
+  },
   data() {
     return {
-      styles,
       IrregularVerbs,
       LukesPhrasal,
       OxfordB1,
@@ -27,6 +23,7 @@ export default {
       OxfordC1,
       VerbenData,
       Goethe,
+
     };
   },
 };
@@ -34,23 +31,20 @@ export default {
 </script>
 
 <template>
-    <nav
-    class={styles.nav}
-   
-  >
-    <div class={styles.nav__div}>
-      <aside className={styles.aside}>
+  <nav class="flex justify-center items-center w-full  min-h-[100px] shadow-xl z-[400] px-4">
+    <div class="navDetails w-full h-full flex items-start  relative text-xl ">
+      <aside class="logo sm:w-1/3 ">
         <NuxtLink to="/">
           Learn <strong>languages</strong>
         </NuxtLink>
       </aside>
-      <article className={styles.article}>
+      <article class="justify-around items-start w-full h-full hidden md:flex">
         <NuxtLink to="/">Home</NuxtLink>
         <details class="cursor-pointer">
           <summary class="uppercase logo">
             <strong class="hover:text-sky-700">English</strong>
           </summary>
-          <div className={styles.nav__ul}>
+          <ul class="flex flex-col border-solid border-t-4 border-sky-400 navDetails">
             <NuxtLink to="/english/irregular-verbs">Irregular Verbs ({{IrregularVerbs.length}})</NuxtLink>
             <NuxtLink to="/english/search-irregular">Irregular List ({{IrregularVerbs.length}})</NuxtLink>
             <NuxtLink to="/english/oxford-B1">Oxford B1 ({{OxfordB1.length}})</NuxtLink>
@@ -58,7 +52,7 @@ export default {
             <NuxtLink to="/english/oxford-C1">Oxford C1 ({{OxfordC1.length}})</NuxtLink>
             <NuxtLink to="/english/phrasal-verbs">Phrasal Verbs ({{LukesPhrasal.length}})</NuxtLink>
             <NuxtLink to="/english/pagination">Pagination</NuxtLink>
-          </div>
+          </ul>
         </details>
 
         <details class="cursor-pointer">
@@ -72,6 +66,7 @@ export default {
         </details>
       </article>
 
+
       <span class="hidden md:flex  bottom-2 right-4 text-3xl">
         dark
       </span>
@@ -82,6 +77,7 @@ export default {
     </div>
 
    <p>nav</p>
+   <MobileNav />
   </nav>
 
 </template>

@@ -9,6 +9,8 @@ import Goethe from '../../myData/Goethe.js';
 
 import MobileNav from './MobileNav.vue';
 
+
+
 export default {
   name: 'Navbar',
   components: {
@@ -23,6 +25,7 @@ export default {
       OxfordC1,
       VerbenData,
       Goethe,
+      mobileNav: false,
 
     };
   },
@@ -76,8 +79,8 @@ export default {
       </div>
     </div>
 
-   <p>nav</p>
-   <MobileNav />
+  
+  <MobileNav v-if="mobileNav" />
   </nav>
 
 </template>

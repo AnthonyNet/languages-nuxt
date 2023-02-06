@@ -21,6 +21,7 @@ const myClass = plugin(function({addUtilities}){
 module.exports = {
   content: [
     "./components/**/*.{js,vue,ts}",
+    "./sections/**/*.{js,vue,ts}",
     "./layouts/**/*.vue",
     "./pages/**/*.vue",
     "./plugins/**/*.{js,ts}",
